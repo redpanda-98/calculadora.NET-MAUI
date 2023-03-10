@@ -2,47 +2,61 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="sumaNum.MainPage"
-             Title="Suma de dos numeros"
-             BackgroundColor="White">
+             Title="Calculadora checkBox">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+        <StackLayout
+            Margin="20,35,20,25">
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="Center">
 
-            <Label
-                Text="Ingresa un número: "
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" 
-                TextColor="Black" />
+                <Label
+                    Text="Ingresa un número: "
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="Medium"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"/>
 
-            <Entry 
-                x:Name="valor1" 
-                FontSize="Medium" 
-                Keyboard="Numeric"
-                HorizontalOptions="Center"
-                TextColor="Black" 
-                />
+                <Border Stroke="BlueViolet" StrokeThickness="2" HorizontalOptions="FillAndExpand" Padding="5" Margin="5">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+                    <Entry 
+                        x:Name="valor1" 
+                        FontSize="Medium" 
+                        Keyboard="Numeric"
+                        HorizontalOptions="FillAndExpand"/>
+                </Border>
+            </StackLayout>
 
-            <Label
-                Text="Ingresa otro número: "
-                SemanticProperties.HeadingLevel="Level2"
-                FontSize="32"
-                HorizontalOptions="Center"
-                TextColor="Black" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                <Label
+                    Text="Ingresa otro número: "
+                    SemanticProperties.HeadingLevel="Level2"
+                    FontSize="Medium"
+                    HorizontalOptions="Center" />
 
-            <Entry 
-                x:Name="valor2" 
-                FontSize="Medium" 
-                Keyboard="Numeric"
-                HorizontalOptions="Center" 
-                TextColor="Black" />
+                <Border Stroke="blueViolet" StrokeThickness="2" HorizontalOptions="FillAndExpand" Padding="5" Margin="5">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                    <Entry 
+                        x:Name="valor2" 
+                        FontSize="Medium" 
+                        Keyboard="Numeric"
+                        HorizontalOptions="FillAndExpand" />
+                </Border>
+            </StackLayout>
 
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <RadioButton x:Name="R1" Content="Suma" IsChecked="True" GroupName="calculdora" FontSize="Medium"/>
+                <RadioButton x:Name="R2" Content="Resta" GroupName="calculdora" FontSize="Medium"/>
+            </StackLayout>
+                
             <Button
                 x:Name="SumaBtn"
-                Text="Sumar"
+                Text="Resultado"
                 SemanticProperties.Hint="Suma dos números"
                 Clicked="Button_Clicked"
                 BackgroundColor="BlueViolet"
@@ -51,12 +65,13 @@
 
             <Label 
                 x:Name="resultado"
+                Text=""
                 FontAttributes="Bold" 
-                FontSize="32"
-                HorizontalOptions="Center"
-                TextColor="Black" />
+                FontSize="Large"
+                HorizontalOptions="Center" />
 
-        </VerticalStackLayout>
+            
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>
