@@ -1,0 +1,1 @@
+C:\Users\Sistemas\source\repos\sumaNum\sumaNum\sumaNum.csproj;x64
